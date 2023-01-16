@@ -1,0 +1,14 @@
+
+void plusMinus(vector<int> arr) {
+     int pov=0;
+     int neg=0;
+     int zero=0;
+     for(auto it:arr){
+        if(it>0)pov++;
+        else if(it<0)neg++;
+        else zero++;
+     }
+     cout<<(double)pov/arr.size()<<endl;
+     cout<<(double)neg/arr.size()<<endl;
+     cout<<(double)zero/arr.size()<<endl;
+}
