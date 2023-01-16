@@ -1,0 +1,32 @@
+ public static String twoStrings(String s1, String s2) {
+    HashMap<Character,Integer>mp=new HashMap<Character, Integer>();
+       char[] arr1= s1.toCharArray();
+       char[] arr2= s2.toCharArray();
+ 
+        for (char c :arr1) {
+            if (mp.containsKey(c)) {
+ 
+                // If char is present in charCountMap,
+                // incrementing it's count by 1
+                mp.put(c, mp.get(c) + 1);
+            }
+            else {
+                // If char is not present in charCountMap,
+                // putting this char to charCountMap with 1 as it's value
+                mp.put(c, 1);
+            }
+        }
+        
+        
+       boolean flag=false;
+       for(char it:arr2){
+           if(mp.containsKey(it)){
+               flag=true;
+               break;
+           }
+       } 
+        if(flag) return "YES";
+        else return "NO";
+    }
+
+}
