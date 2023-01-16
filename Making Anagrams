@@ -1,0 +1,21 @@
+int makingAnagrams(string s1, string s2) {
+    unordered_map<char,int>mp1;
+    unordered_map<char,int>mp2;
+    int cnt=0;
+    for(auto it:s1)mp1[it]++;
+    for(auto it:s2)mp2[it]++;
+    
+    for(auto it:mp2){
+        if(!mp1.count(it.first)){
+            cnt+=it.second;
+        }else{
+            cnt+=abs(mp1[it.first]-mp2[it.first]);
+        }
+    }
+     for(auto it:mp1){
+        if(!mp2.count(it.first)){
+            cnt+=it.second;
+        }
+    }
+    return cnt;
+}
